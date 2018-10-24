@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Newton's Cannon</title>
+    <style>
+        body {
+            background-color: #333;
+            margin: 0;
+        }
+        h1 {
+            color: #FFF;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+        }
+
+        .newton-image, .tools-container {
+            position: relative;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .newton-image {
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .tools-container {
+            color: #FFF;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #drawingContainer {
+            position: relative;
+        }
+
+        #trailCanvas {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Newton's Cannon</h1>
+    <div class="newton-image">
+        <img src="./assets/NewtonDrawing.jpg" alt="Newton's Drawing">
+        <canvas id="trailCanvas" width="500" height="500"></canvas>
+        <canvas id="drawingContainer" width="500" height="500">
+        </canvas>
+    </div>
+    <div class="tools-container">
+        <button id="fireCannonBtn" onclick="fireCannon()">Fire the Cannon!</button>
+        <input type="range" name="speedSlider" id="speedSlider" min="0" max="12000" step="100" value="1000" oninput="showSpeed()">
+        <div>
+            <span id="speedValue"></span>
+            <span>m/s</span>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
